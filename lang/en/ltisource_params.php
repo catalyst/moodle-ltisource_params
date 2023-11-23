@@ -26,3 +26,4 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Custom params LTI extension';
+$string['privacy:metadata'] = 'Custom params LTI extension plugin does not store any personal data.';

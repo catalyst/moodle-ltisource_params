@@ -14,18 +14,28 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
+namespace ltisource_params\privacy;
+
+use core_privacy\local\metadata\null_provider;
+
+
 /**
- * Plugin version and other meta-data are defined here.
+ * Privacy API implementation.
  *
  * @package     ltisource_params
- * @copyright   2023 Dmitrii Metelkin <dmitriim@catalyst-au.net>
+ * @author      Dmitrii Metelkin <dmitriim@catalyst-au.net>
+ * @copyright   2023 Catalyst IT
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+class provider implements null_provider {
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->component = 'ltisource_params';
-$plugin->release = 2023112300;
-$plugin->version = 2023112300;
-$plugin->requires = 2022112800;
-$plugin->maturity = MATURITY_ALPHA;
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return string
+     */
+    public static function get_reason(): string {
+        return 'privacy:metadata';
+    }
+}
