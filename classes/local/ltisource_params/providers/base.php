@@ -27,13 +27,7 @@ namespace ltisource_params\local\ltisource_params\providers;
 abstract class base {
 
     /**
-     * Protected constructor.
-     */
-    protected function __construct() {
-    }
-
-    /**
-     * Get certificate instance.
+     * Get provider instance.
      *
      * @return base
      */
@@ -42,7 +36,7 @@ abstract class base {
     }
 
     /**
-     * Get full human-readable name of the certificate.
+     * Get full human-readable name of provider.
      *
      * @return string
      */
@@ -51,7 +45,7 @@ abstract class base {
     }
 
     /**
-     * Returns a short name of the certificate.
+     * Returns a short name of the provider.
      *
      * @return string
      */
@@ -60,28 +54,19 @@ abstract class base {
     }
 
     /**
-     * A helper function to generate a placeholder name.
+     * Returns a list of all fields supported by provider.
      *
-     * @param string $name Placeholder name.
-     *
-     * @return string
-     */
-    final protected function generate_placeholder(string $name): string {
-        return 'CustomParams.' . $this->get_shortname() . '.' . $name;
-    }
-
-    /**
-     * Returns a list of all placeholders.
      * @return array
      */
-    abstract public function get_placeholders(): array;
+    abstract public function get_fields(): array;
 
     /**
-     * Gets a value for provided placeholder.
+     * Gets a value for given field.
      *
-     * @param string $placeholder Placeholder name.
+     * @param string $field Field name.
+     *
      * @return string
      */
-    abstract public function get_value(string $placeholder): string;
+    abstract public function get_value(string $field): string;
 
 }
