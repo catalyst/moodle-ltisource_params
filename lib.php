@@ -14,6 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Lib functions and callbacks.
+ *
+ * @package     ltisource_params
+ * @copyright   2023 Dmitrii Metelkin <dmitriim@catalyst-au.net>
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 use ltisource_params\provider_factory;
 use ltisource_params\placeholder;
 
@@ -60,4 +68,28 @@ function ltisource_params_coursemodule_standard_elements(moodleform_mod $modform
         $form->setAdvanced('paramshelp');
         $form->setForceLtr('paramshelp');
     }
+}
+
+
+/**
+ * Calling before launch LTI connection.
+ *
+ * @param stdClass $instance LTI instance.
+ * @param string $endpoint Endpoint.
+ * @param array $requestparams Request parameters.
+ *
+ * @return array
+ */
+function ltisource_params_before_launch($instance, $endpoint, $requestparams) {
+    $params = [];
+    foreach ($requestparams as $requestparam => $placeholder) {
+        if (placeholder::is_valid_placeholder($placeholder)) {
+            $value = placeholder::get_value($placeholder);
+            if (!is_null($value)) {
+                $params[$requestparam] = $value;
+            }
+        }
+    }
+
+    return $params;
 }
