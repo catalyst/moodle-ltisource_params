@@ -28,7 +28,7 @@ namespace ltisource_params;
 class placeholder {
 
     /**
-     *Placeholder prefix.
+     * Placeholder prefix.
      */
     const PREFIX = 'Params';
 
