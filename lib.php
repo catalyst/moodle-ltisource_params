@@ -48,7 +48,7 @@ function ltisource_params_coursemodule_standard_elements(moodleform_mod $modform
         $providers = provider_factory::get_installed_providers();
 
         foreach (placeholder::get_all_placeholders() as $providername => $placeholders) {
-            if (key_exists($providername, $providers)) {
+            if (key_exists($providername, $providers) && !empty($placeholders)) {
                 $providershtml .= $OUTPUT->render_from_template('ltisource_params/placeholders', [
                     'provider' => $providers[$providername]->get_fullname(),
                     'placeholders' => implode(', ', $placeholders),
