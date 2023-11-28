@@ -72,14 +72,11 @@ class course extends base {
         global $COURSE;
 
         $course = clone $COURSE;
-        $courses = [$course->id => $course];
-        core_course_category::preload_custom_fields($courses);
 
-        $course = reset($courses);
-
-        if (!empty($course->customfields)) {
+        $customfields = course_handler::create()->get_instance_data($course->id);
+        if (!empty($customfields)) {
             $fields = $this->get_fields();
-            foreach ($course->customfields as $customfield) {
+            foreach ($customfields as $customfield) {
                 $fieldname = self::CUSTOM_FIELD_PREFIX . $customfield->get_field()->get('shortname');
                 if (in_array($fieldname, $fields)) {
                     $course->{$fieldname} = $customfield->export_value();
