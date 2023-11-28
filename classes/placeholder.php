@@ -43,18 +43,21 @@ class placeholder {
      * @return array
      */
     public static function get_all_placeholders(): array {
-        $placeholders = [];
+        $allplaceholders = [];
 
         foreach (provider_factory::get_installed_providers() as $provider) {
-            $fields = $provider->get_fields();
-            array_walk($fields, function(&$field) use ($provider) {
-                $field = placeholder::build_placeholder($provider->get_shortname(), $field);
-            });
+            $providerplaceholders = [];
 
-            $placeholders[$provider->get_shortname()] = $fields;
+            foreach ($provider->get_fields() as $field) {
+                $providerplaceholders[] = self::build_placeholder($provider->get_shortname(), $field);
+            }
+
+            if (!empty($providerplaceholders)) {
+                $allplaceholders[$provider->get_shortname()] = $providerplaceholders;
+            }
         }
 
-        return $placeholders;
+        return $allplaceholders;
     }
 
     /**
