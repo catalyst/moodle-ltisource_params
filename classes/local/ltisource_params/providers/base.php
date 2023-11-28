@@ -16,6 +16,8 @@
 
 namespace ltisource_params\local\ltisource_params\providers;
 
+use ReflectionClass;
+
 /**
  * Base class for params providers.
  *
@@ -50,7 +52,9 @@ abstract class base {
      * @return string
      */
     final public function get_shortname(): string {
-        return str_replace(__NAMESPACE__ . '\\', '', static::class);
+        $reflector = new ReflectionClass(static::class);
+
+        return $reflector->getShortName();
     }
 
     /**
