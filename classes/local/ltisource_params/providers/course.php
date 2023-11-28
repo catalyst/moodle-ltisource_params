@@ -54,12 +54,8 @@ class course extends base {
             array_keys(self::CATEGORY_FIELDS)
         );
 
-        $customfields = course_handler::create()->get_fields();
-
-        if (!empty($customfields)) {
-            foreach ($customfields as $customfield) {
-                $fields[] = self::CUSTOM_FIELD_PREFIX . $customfield->get('shortname');
-            }
+        foreach (course_handler::create()->get_fields() as $customfield) {
+            $fields[] = self::CUSTOM_FIELD_PREFIX . $customfield->get('shortname');
         }
 
         return  $fields;
