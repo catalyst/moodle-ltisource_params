@@ -43,7 +43,7 @@ class provider_factory {
             if (is_subclass_of($class, base::class)) {
                 $instance = $class::get_instance();
                 if (isset($providers[$instance->get_shortname()])) {
-                    throw new coding_exception('Duplicate provider');
+                    throw new coding_exception('Duplicate provider ' . $instance->get_shortname());
                 }
 
                 $providers[$instance->get_shortname()] = $instance;
