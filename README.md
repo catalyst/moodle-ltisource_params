@@ -1,8 +1,36 @@
 # Custom params LTI extension #
 
-TODO Describe the plugin shortly here.
+The plugin provides a way to extend LTI custom parameters.
 
-TODO Provide more detailed description here.
+## How it works ##
+This plugin lets any other plugin implement a list of placeholders that can be used to populate custom LTI parameters for LTI tools.
+
+When LTI request is being built those placeholders are replaced by real values.
+
+A list of all available placeholders are displayed on activity editing form. 
+
+For example. Out of the box the plugin supports Course parameter provider. 
+That gives a list of placeholders that can be converted to values related to a course that LTI activity is stored at. E.g. placeholder Params.course.fullname will give a course full name. So custom LTI parameters may look like c.name=Params.course.fullname
+
+## In-built parameter providers ##
+
+* Course (including course custom fields)
+
+## Implementing new parameter providers ##
+
+The plugin is written in a way that any other plugins can implement parameters providers so they could be used in LTI activity form as placeholders. 
+
+As an example, plugin itself got some parameter providers; the directory structure is as follows:
+
+```
+ltisource_params
+└── classes
+    └── local
+        └── ltisource_params
+           └── providers
+                 └── course.php
+```
+Each provider **must extend** the base class.
 
 ## Installing via uploaded ZIP file ##
 
