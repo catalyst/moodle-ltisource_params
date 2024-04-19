@@ -30,3 +30,4 @@ $string['availableplaceholders_help'] = 'This is a list of all available placeho
 $string['course'] = 'Course';
 $string['pluginname'] = 'Custom params LTI extension';
 $string['privacy:metadata'] = 'Custom params LTI extension plugin does not store any personal data.';
+$string['user'] = 'User';
