@@ -81,7 +81,7 @@ class user_test extends advanced_testcase {
         $this->add_user_profile_field('text', 'text');
         $this->add_user_profile_field('checkbox', 'checkbox');
         $this->add_user_profile_field('menu', 'menu', ['param1' => 'menu value']);
-        // This field won't be in use as is_user_object_data for thi field  type returns false.
+        // This field won't be in use as is_user_object_data for this field  type returns false.
         $this->add_user_profile_field('textarea', 'textarea');
 
         $expected = [
