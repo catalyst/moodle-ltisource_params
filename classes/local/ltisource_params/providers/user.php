@@ -49,7 +49,7 @@ class user extends base {
         array_unshift($fields, 'username');
         array_unshift($fields, 'id');
 
-        $customfields = array_column(profile_get_custom_fields(true), 'shortname', 'shortname');
+        $customfields = array_column(profile_get_custom_fields(true), 'shortname');
         if (!empty($customfields)) {
             // Prefix custom profile fields to be able to distinguish.
             array_walk($customfields, function(&$value) {
@@ -57,7 +57,6 @@ class user extends base {
             });
 
             $fields = array_merge($fields, $customfields);
-            $fields = array_values($fields);
         }
 
         return $fields;
