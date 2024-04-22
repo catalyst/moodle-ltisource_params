@@ -9,8 +9,12 @@ When LTI request is being built those placeholders are replaced by real values.
 
 A list of all available placeholders are displayed on activity editing form. 
 
-For example. Out of the box the plugin supports Course parameter provider. 
-That gives a list of placeholders that can be converted to values related to a course that LTI activity is stored at. E.g. placeholder Params.course.fullname will give a course full name. So custom LTI parameters may look like c.name=Params.course.fullname
+Out of the box the plugin supports:
+ * Course parameter provider
+ * User parameter provider
+
+That gives a list of placeholders that can be converted to values related selected provider. 
+For example, to a course or that LTI activity is stored at. E.g. placeholder Params.course.fullname will give a course full name. So custom LTI parameters may look like c.name=Params.course.fullname
 
 ## In-built parameter providers ##
 
