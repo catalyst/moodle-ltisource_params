@@ -28,4 +28,5 @@ $plugin->component = 'ltisource_params';
 $plugin->release = 2024041900;
 $plugin->version = 2024041900;
 $plugin->requires = 2022112800;
-$plugin->maturity = MATURITY_ALPHA;
+$plugin->maturity = MATURITY_STABLE;
+$plugin->supported = [401, 405];
