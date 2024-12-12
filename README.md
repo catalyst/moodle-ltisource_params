@@ -67,6 +67,10 @@ Alternatively, you can run
 
 to complete the installation from the command line.
 
+# Warm thanks #
+
+Thanks to Monash University (https://www.monash.edu) for funding the development of this plugin.
+
 ## License ##
 
 2023 Dmitrii Metelkin <dmitriim@catalyst-au.net>
