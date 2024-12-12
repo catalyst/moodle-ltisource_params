@@ -73,7 +73,7 @@ Thanks to Monash University (https://www.monash.edu) for funding the development
 
 ## License ##
 
-2023 Dmitrii Metelkin <dmitriim@catalyst-au.net>
+2023 Catalyst IT
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
