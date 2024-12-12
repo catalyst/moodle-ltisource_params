@@ -1,6 +1,14 @@
+![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/catalyst/moodle-ltisource_params/ci.yml?branch=MOODLE_401_STABLE)
+
 # Custom params LTI extension #
 
 The plugin provides a way to extend LTI custom parameters.
+
+## Branches
+
+| Moodle version   | Branch            |
+|------------------|-------------------|
+| Moodle 4.1+      | MOODLE_401_STABLE |
 
 ## How it works ##
 This plugin lets any other plugin implement a list of placeholders that can be used to populate custom LTI parameters for LTI tools.

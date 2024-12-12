@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
+namespace ltisource_params;
+
 /**
  * Tests for lib functions.
  *
@@ -21,7 +23,7 @@
  * @copyright   2023 Dmitrii Metelkin <dmitriim@catalyst-au.net>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class ltisource_params_lib_test extends advanced_testcase {
+class ltisource_params_lib_test extends \advanced_testcase {
 
     /**
      * Test generating parameters before launching LTI.
