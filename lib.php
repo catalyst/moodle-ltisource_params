@@ -35,7 +35,6 @@ function ltisource_params_coursemodule_standard_elements(moodleform_mod $modform
     global $CFG, $OUTPUT;
 
     if ($modform instanceof mod_lti_mod_form) {
-
         // Core static doesn't support set_force_ltr method to hide the field. We have to extend it by a custom one.
         // We need set_force_ltr to be able to hide this element behind "Show more" link in a form.
         \MoodleQuickForm::registerElementType(

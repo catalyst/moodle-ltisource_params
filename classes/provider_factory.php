@@ -29,7 +29,6 @@ use ltisource_params\local\ltisource_params\providers\base;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class provider_factory {
-
     /**
      * Get a list of installed providers.
      *

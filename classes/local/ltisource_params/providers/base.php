@@ -27,7 +27,6 @@ use ReflectionClass;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class base {
-
     /**
      * Get provider instance.
      *
@@ -72,5 +71,4 @@ abstract class base {
      * @return string
      */
     abstract public function get_value(string $field): string;
-
 }

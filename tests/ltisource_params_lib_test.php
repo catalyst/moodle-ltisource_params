@@ -23,14 +23,13 @@ namespace ltisource_params;
  * @copyright   2023 Dmitrii Metelkin <dmitriim@catalyst-au.net>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class ltisource_params_lib_test extends \advanced_testcase {
-
+final class ltisource_params_lib_test extends \advanced_testcase {
     /**
      * Test generating parameters before launching LTI.
      *
      * @covers ::ltisource_params_before_launch
      */
-    public function test_ltisource_params_before_launch() {
+    public function test_ltisource_params_before_launch(): void {
         global $COURSE;
 
         $this->resetAfterTest();

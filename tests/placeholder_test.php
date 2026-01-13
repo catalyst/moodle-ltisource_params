@@ -27,14 +27,13 @@ use advanced_testcase;
  *
  * @covers \ltisource_params\placeholder
  */
-class placeholder_test extends advanced_testcase {
-
+final class placeholder_test extends advanced_testcase {
     /**
      * Data provider for testing test_build_placeholder method.
      *
      * @return array[]
      */
-    public function build_placeholder_data_provider(): array {
+    public static function build_placeholder_data_provider(): array {
         return [
             ['test_provider', 'test_field', 'Params.test_provider.test_field'],
             ['test_provider', ' test_field', 'Params.test_provider.test_field'],
@@ -54,7 +53,7 @@ class placeholder_test extends advanced_testcase {
      * @param string $field Field name for testing.
      * @param string $expected Expected test result.
      */
-    public function test_build_placeholder(string $provider, string $field, string $expected) {
+    public function test_build_placeholder(string $provider, string $field, string $expected): void {
         $this->assertSame($expected, placeholder::build_placeholder($provider, $field));
     }
 
@@ -63,7 +62,7 @@ class placeholder_test extends advanced_testcase {
      *
      * @return array[]
      */
-    public function is_valid_placeholder_data_provider(): array {
+    public static function is_valid_placeholder_data_provider(): array {
         return [
             ['Params.test_provider.test_field', true],
             [' Params.test_provider.test_field', false],
@@ -88,7 +87,7 @@ class placeholder_test extends advanced_testcase {
      * @param string $placeholder Placeholder for testing.
      * @param bool $expected Expected test result.
      */
-    public function test_is_valid_placeholder(string $placeholder, bool $expected) {
+    public function test_is_valid_placeholder(string $placeholder, bool $expected): void {
         $this->assertSame($expected, placeholder::is_valid_placeholder($placeholder));
     }
 
@@ -97,7 +96,7 @@ class placeholder_test extends advanced_testcase {
      *
      * @return array[]
      */
-    public function extract_provider_data_provider(): array {
+    public static function extract_provider_data_provider(): array {
         return [
             ['Params.test_provider.test_field', 'test_provider'],
             [' Params.test_provider.test_field', ''],
@@ -122,7 +121,7 @@ class placeholder_test extends advanced_testcase {
      * @param string $placeholder Placeholder for testing.
      * @param string $expected Expected test result.
      */
-    public function test_extract_provider(string $placeholder, string $expected) {
+    public function test_extract_provider(string $placeholder, string $expected): void {
         $this->assertSame($expected, placeholder::extract_provider($placeholder));
     }
     /**
@@ -130,7 +129,7 @@ class placeholder_test extends advanced_testcase {
      *
      * @return array[]
      */
-    public function extract_field_data_provider(): array {
+    public static function extract_field_data_provider(): array {
         return [
             ['Params.test_provider.test_field', 'test_field'],
             [' Params.test_provider.test_field', ''],
@@ -155,7 +154,7 @@ class placeholder_test extends advanced_testcase {
      * @param string $placeholder Placeholder for testing.
      * @param string $expected Expected test result.
      */
-    public function test_extract_field(string $placeholder, string $expected) {
+    public function test_extract_field(string $placeholder, string $expected): void {
         $this->assertSame($expected, placeholder::extract_field($placeholder));
     }
 }
