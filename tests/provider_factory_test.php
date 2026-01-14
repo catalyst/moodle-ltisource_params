@@ -29,12 +29,11 @@ use ltisource_params\local\ltisource_params\providers\base;
  *
  * @covers \ltisource_params\provider_factory
  */
-class provider_factory_test extends advanced_testcase {
-
+final class provider_factory_test extends advanced_testcase {
     /**
      * Test list of installed providers.
      */
-    public function test_get_installed_providers() {
+    public function test_get_installed_providers(): void {
         $classes = core_component::get_component_classes_in_namespace(null, '\\local\\ltisource_params\\providers\\');
 
         $expected = [];

@@ -32,7 +32,6 @@ require_once($CFG->libdir . '/form/static.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class static_forceltr extends MoodleQuickForm_static {
-
     /**
      * Force the field to flow left-to-right.
      *

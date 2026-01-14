@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-
 namespace ltisource_params;
 
 /**
@@ -26,7 +25,6 @@ namespace ltisource_params;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class placeholder {
-
     /**
      * Placeholder prefix.
      */
@@ -72,7 +70,7 @@ class placeholder {
         $field = self::extract_field($placeholder);
         $provider = self::extract_provider($placeholder);
 
-        if (!empty($field) && !empty($provider) && key_exists($provider, $providers) ) {
+        if (!empty($field) && !empty($provider) && key_exists($provider, $providers)) {
             return $providers[$provider]->get_value($field);
         }
 

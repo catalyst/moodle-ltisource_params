@@ -29,12 +29,11 @@ use advanced_testcase;
  *
  * @covers \ltisource_params\local\ltisource_params\providers\course;
  */
-class course_test extends advanced_testcase {
-
+final class course_test extends advanced_testcase {
     /**
      * Test class constants.
      */
-    public function test_constants() {
+    public function test_constants(): void {
         $this->assertSame('custom_field_', course::CUSTOM_FIELD_PREFIX);
 
         $this->assertSame([
@@ -46,7 +45,7 @@ class course_test extends advanced_testcase {
     /**
      * Test getting fields.
      */
-    public function test_get_fields() {
+    public function test_get_fields(): void {
         $this->resetAfterTest();
 
         $fieldcategory = $this->getDataGenerator()->create_custom_field_category([]);
@@ -67,7 +66,7 @@ class course_test extends advanced_testcase {
     /**
      * Test getting value for a field.
      */
-    public function test_get_value() {
+    public function test_get_value(): void {
         global $COURSE;
 
         $this->resetAfterTest();
@@ -88,7 +87,7 @@ class course_test extends advanced_testcase {
                     'shortname' => $datefield->get('shortname'),
                     'value' => 'Test value of the custom field',
                 ],
-            ]
+            ],
         ]);
 
         $COURSE = $course;

@@ -29,7 +29,6 @@ use core_course\customfield\course_handler;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class course extends base {
-
     /**
      * Custom field prefix for a placeholder.
      */

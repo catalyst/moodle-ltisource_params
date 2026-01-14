@@ -31,7 +31,6 @@ require_once($CFG->dirroot . '/user/profile/lib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class user extends base {
-
     /**
      * Custom profile field prefix for a placeholder.
      */
@@ -52,7 +51,7 @@ class user extends base {
         $customfields = array_column(profile_get_custom_fields(true), 'shortname');
         if (!empty($customfields)) {
             // Prefix custom profile fields to be able to distinguish.
-            array_walk($customfields, function(&$value) {
+            array_walk($customfields, function (&$value) {
                 $value = self::PROFILE_FIELD_PREFIX . $value;
             });
 

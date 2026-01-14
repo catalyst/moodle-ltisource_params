@@ -28,8 +28,7 @@ use advanced_testcase;
  *
  * @covers \ltisource_params\local\ltisource_params\providers\user;
  */
-class user_test extends advanced_testcase {
-
+final class user_test extends advanced_testcase {
     /**
      * A helper function to create a custom profile field.
      *
@@ -67,14 +66,14 @@ class user_test extends advanced_testcase {
     /**
      * Test class constants.
      */
-    public function test_constants() {
+    public function test_constants(): void {
         $this->assertSame('profile_field_', user::PROFILE_FIELD_PREFIX);
     }
 
     /**
      * Test getting fields.
      */
-    public function test_get_fields() {
+    public function test_get_fields(): void {
         $this->resetAfterTest();
 
         // Create profile fields.
@@ -117,7 +116,7 @@ class user_test extends advanced_testcase {
     /**
      * Test getting value for a field.
      */
-    public function test_get_value() {
+    public function test_get_value(): void {
         global $USER;
 
         $this->resetAfterTest();
